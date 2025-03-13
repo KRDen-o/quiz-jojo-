@@ -1,52 +1,36 @@
 #this quiz will be about jojo stand names
 
-#check interger for how many questions are allowed
+#i will make funtions for new game, answer, and/or other funtions
+def new_game():
+#this will display not only the questions but also some answers and the user input
+    guesses = []
+    correct_guesses = 0
+    question_num= 1
 
-# Check that users have entered a valid option based on a list
-def string_checker(question, valid_ans=("yes", "no")):
-    while True:
-        # Get user response and make sure it is lowercase
-        user_response = input(question).lower()
+    for key in questions:
+        print("----------------------------------------")
+        print (key)
+        for i in options[question_num-1]:
+            print(i)
+        quess = input("Enter (A, B, C, or D: ")
+        quess = quess.upper()
+        question_num += 1
 
-        for item in valid_ans:
-            # check if the user response is a word in the list
-            if item == user_response:
-                return item
+def check_answer():
+    pass
+def display_score():
+    pass
+def play_again():
+    pass
 
-            # check if the user response uis the same as
-            # the first letter of the item
-            elif user_response == item[0]:
-                return item
+questions = {
+    "what is johnathan joestar main power?": "B",
+    "what is joseph joestar main ability he uses?": "D",
+    "what is jotaro kujo's stand name?": "A"
+}
 
-        print("Please enter a valid option")
+options = [["A. Stand", "B. Hamon", "C. Vampiric powers", "D. Other"],
+           ["A. Stand", "B. Hamon", "C. weapons", "D. A and B"],
+           ["A. Star platinum", "B. The world", "C. The wonder of U", "D. Other"],]
 
-def instructions():
-    print('''
-    *** Instructions ***
-    there is a quiz to see how good you are knowing jojo characters stands or abilities
-    
-    The rules are:
-    you have to input the correct stand or other ability they have to score a point 
-    
-    Press xxx to exit the game
-    
-    Good luck! 
-    ''')
-    # check for an interger thats more than 0
-def int_check(question):
-    while True:
-        error = "please enter an number more than zero"
-        to_check = input(question)
-
-        try:
-            responce = int(to_check)
-
-            #cheks that the once
-
-            if responce < 1:
-                print("error")
-            else:
-                return  responce
-        except ValueError:
-            print("error")
-
+new_game()
